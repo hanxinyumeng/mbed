@@ -656,6 +656,19 @@
         "extra_labels_remove": ["FRDM"],
         "supported_form_factors": []
     },
+    "LPC54114": {
+        "supported_form_factors": ["ARDUINO"],
+        "core": "Cortex-M4F",
+        "supported_toolchains": ["ARM", "IAR"],
+        "extra_labels": ["NXP", "MCUXpresso_MCUS", "LPC54114_M4", "LPCXpresso"],
+        "is_disk_virtual": true,
+        "macros": ["CPU_LPC54114J256BD64_cm4", "FSL_RTOS_MBED"],
+        "inherits": ["Target"],
+        "detect_code": ["1054"],
+        "device_has": ["ANALOGIN", "ERROR_RED", "I2C", "I2CSLAVE", "INTERRUPTIN", "PORTIN", "PORTINOUT", "PORTOUT", "PWMOUT", "RTC", "SERIAL", "SLEEP", "SPI", "SPISLAVE", "STDIO_MESSAGES"],
+        "release_versions": ["2", "5"],
+        "device_name" : "LPC54114J256BD64"
+    },
     "NUCLEO_F030R8": {
         "supported_form_factors": ["ARDUINO", "MORPHO"],
         "core": "Cortex-M0",
