@@ -630,7 +630,7 @@
         "supported_toolchains": ["ARM", "GCC_ARM", "IAR"],
         "extra_labels": ["Freescale", "MCUXpresso_MCUS", "KSDK2_MCUS", "FRDM"],
         "is_disk_virtual": true,
-        "macros": ["CPU_MK82FN256VDC15", "FSL_RTOS_MBED"],
+        "macros": ["CPU_MK82FN256VDC15", "FSL_RTOS_MBED", "MBEDTLS_CONFIG_HW_SUPPORT"],
         "inherits": ["Target"],
         "detect_code": ["0217"],
         "device_has": ["ANALOGIN", "ANALOGOUT", "ERROR_RED", "I2C", "I2CSLAVE", "INTERRUPTIN", "LOWPOWERTIMER", "PORTIN", "PORTINOUT", "PORTOUT", "PWMOUT", "RTC", "SERIAL", "SLEEP", "SPI", "SPISLAVE", "STDIO_MESSAGES"],
