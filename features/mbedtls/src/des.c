@@ -489,7 +489,6 @@ void mbedtls_des_setkey( uint32_t SK[32], const unsigned char key[MBEDTLS_DES_KE
                 | ((Y <<  2) & 0x00000004) | ((Y >> 21) & 0x00000002);
     }
 }
-#endif /* !MBEDTLS_DES_SETKEY_ALT */
 
 /*
  * DES key schedule (56-bit, encryption)
@@ -622,6 +621,7 @@ int mbedtls_des3_set3key_dec( mbedtls_des3_context *ctx,
 
     return( 0 );
 }
+#endif /* !MBEDTLS_DES_SETKEY_ALT */
 
 /*
  * DES-ECB block encryption/decryption
