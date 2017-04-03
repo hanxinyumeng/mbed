@@ -57,6 +57,14 @@ __ram_vector_table__ = 1;
 __stack_size__ = 0x3000;
 __heap_size__ = 0x6000;
 
+#if !defined(MBED_APP_START)
+  #define MBED_APP_START 0
+#endif
+
+#if !defined(MBED_APP_SIZE)
+  #define MBED_APP_SIZE 0x20000
+#endif
+
 HEAP_SIZE  = DEFINED(__heap_size__)  ? __heap_size__  : 0x0400;
 STACK_SIZE = DEFINED(__stack_size__) ? __stack_size__ : 0x0400;
 M_VECTOR_RAM_SIZE = DEFINED(__ram_vector_table__) ? 0x0140 : 0x0;
@@ -64,10 +72,10 @@ M_VECTOR_RAM_SIZE = DEFINED(__ram_vector_table__) ? 0x0140 : 0x0;
 /* Specify the memory areas */
 MEMORY
 {
-  m_interrupts          (RX)  : ORIGIN = 0x00000000, LENGTH = 0x00000140
-  m_bootloader_config   (RX)  : ORIGIN = 0x000003C0, LENGTH = 0x00000040
-  m_flash_config        (RX)  : ORIGIN = 0x00000400, LENGTH = 0x00000010
-  m_text                (RX)  : ORIGIN = 0x00000410, LENGTH = 0x0001FBF0
+  m_interrupts          (RX)  : ORIGIN = MBED_APP_START, LENGTH = 0x00000140
+  m_bootloader_config   (RX)  : ORIGIN = MBED_APP_START + 0x3C0, LENGTH = 0x00000040
+  m_flash_config        (RX)  : ORIGIN = MBED_APP_START + 0x400, LENGTH = 0x00000010
+  m_text                (RX)  : ORIGIN = MBED_APP_START + 0x410, LENGTH = MBED_APP_SIZE - 0x410
   m_data                (RW)  : ORIGIN = 0x1FFFA000, LENGTH = 0x00018000
   m_usb_sram            (RW)  : ORIGIN = 0x40100000, LENGTH = 0x00000800
 }
