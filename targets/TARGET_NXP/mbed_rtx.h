@@ -218,6 +218,21 @@ extern unsigned char            __usr_stack_top__[];
 #define OS_CLOCK                48000000
 #endif
 
+#elif defined(TARGET_LPC54608)
+
+#ifndef INITIAL_SP
+#define INITIAL_SP              (0x20028000UL)
+#endif
+#ifndef OS_TASKCNT
+#define OS_TASKCNT              14
+#endif
+#ifndef OS_MAINSTKSIZE
+#define OS_MAINSTKSIZE          256
+#endif
+#ifndef OS_CLOCK
+#define OS_CLOCK                48000000
+#endif
+
 #endif
 
 #endif  // MBED_MBED_RTX_H
